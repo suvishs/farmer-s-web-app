@@ -1,0 +1,98 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    
+    <!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+  <style>
+    body{
+        background-color: green;
+    }
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+  <h2 style="text-align: center;">Register</h2>
+  {% for i in messages %}
+    <p style="text-align: center;">{{i}}</p>
+  {% endfor %}
+  <div class="card mb-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="https://img.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_1150-37317.jpg?w=740&t=st=1695193328~exp=1695193928~hmac=4f4c23766f69796342672899b00027e294389f2410033a056dbf53d5bcc4f069" alt="Trendy Pants and Shoes"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form action="register" method="post">
+            {% csrf_token %}
+            <div class="form-outline mb-4">
+              <input type="text" id="form2Example1" class="form-control" name="username" placeholder="Enter User Name">
+              <label class="form-label" for="form2Example1">Username</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="email" id="form2Example1" class="form-control" name="email" placeholder="Enter Email">
+                <label class="form-label" for="form2Example1">Email</label>
+            </div>
+
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" class="form-control" name="password" placeholder="Enter Password">
+              <label class="form-label" for="form2Example2">Password</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="password" id="form2Example2" class="form-control" name="confirmpassword" placeholder="ReEnter Password">
+                <label class="form-label" for="form2Example2">Enter Password</label>
+              </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                  <label class="form-check-label" for="form2Example31"> Remember me </label>
+                </div>
+              </div>
+
+              <div class="col">
+                <!-- Simple link -->
+                <a href="login">Login</a>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="Sign in">
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
