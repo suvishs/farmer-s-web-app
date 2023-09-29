@@ -41,9 +41,6 @@
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
-                {% for i in messages %}
-                    <p style="text-align:center;">{{i}}</p>
-                {% endfor %}
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +11 900 800 100</a></p>
@@ -92,6 +89,9 @@
                     </div>
                 </div>
             </div>
+            {% for i in messages %}
+                <p style="text-align:center;">{{i}}</p>
+            {% endfor %}
         </div>
     </div>
     <!-- End Main Top -->
@@ -121,11 +121,11 @@
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">All</a>
                             <ul class="dropdown-menu">
 								<li><a href="/shop">Products</a></li>
-								{% comment %} <li><a href="/shop_detail">Shop Detail</a></li> {% endcomment %}
                                 <li><a href="/my_cart">Cart</a></li>
-                                {% comment %} <li><a href="/checkout">Checkout</a></li> {% endcomment %}
                                 <li><a href="/my_account">My Account</a></li>
-                                {% comment %} <li><a href="wishlist">Wishlist</a></li> {% endcomment %}
+                                <li><a href="/weather">Wether Prediction</a></li>
+                                <li><a href="/neutrition_deficiency">/Neutrition Deficiency Detection</a></li>
+                                <li><a href="/add_product" class="btn btn-warning">Add Products</a></li>
                             </ul>
                         </li>
                     </ul>

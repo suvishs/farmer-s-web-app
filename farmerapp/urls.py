@@ -21,4 +21,7 @@ urlpatterns = [
     path('wishlist', views.wishlist, name="wishlist"),
     path('gallery', views.gallery, name="gallery"),
     path('contact_us', views.contact_us, name="contact_us"),
+    path('weather', views.weather, name="weather"),
+    path('neutrition_deficiency', views.neutrition_deficiency, name="neutrition_deficiency"),
+    path('add_product', views.add_product, name="add_product"),
 ]

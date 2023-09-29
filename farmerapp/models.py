@@ -8,6 +8,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to="Product_image")
     discription = models.CharField(max_length=250)
     price = models.IntegerField()
+    usr = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
     
     def __str__(self):
         return self.name

@@ -124,7 +124,9 @@
                             <li><a href="/my_cart">Cart</a></li>
                             {% comment %} <li><a href="/checkout">Checkout</a></li> {% endcomment %}
                             <li><a href="/my_account">My Account</a></li>
-                            {% comment %} <li><a href="wishlist">Wishlist</a></li> {% endcomment %}
+                            <li><a href="/weather">Wether Prediction</a></li>
+                                <li><a href="/neutrition_deficiency">/Neutrition Deficiency Detection</a></li>
+                                <li><a href="/add_product" class="btn btn-warning">Add Products</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -378,22 +380,41 @@
                                         <div class="card-body">
                                             <form action="my_account" method="post">
                                                 {% csrf_token %}
-                                                <div class="form-group">
-                                                    <label for="firstName">First Name</label>
-                                                    <input type="text" class="form-control" id="firstName" name="name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="lastName">Last Name</label>
-                                                    <input type="text" class="form-control" id="lastName" name="last_name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" name="email" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="phoneNumber">Phone Number</label>
-                                                    <input type="tel" class="form-control" id="phoneNumber" name="phone_number" required>
-                                                </div>
+                                                {% if the_account %}
+                                                    <div class="form-group">
+                                                        <label for="firstName">First Name</label>
+                                                        <input type="text" class="form-control" id="firstName" name="name" vlaue="{{ the_account.name }}" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastName">Last Name</label>
+                                                        <input type="text" class="form-control" id="lastName" vlaue="{{ the_account.last_name }}" name="last_name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" class="form-control" id="email" vlaue="{{ the_account.email }}" name="email" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="phoneNumber">Phone Number</label>
+                                                        <input type="tel" class="form-control" id="phoneNumber" vlaue="{{ the_account.phone_number }}" name="phone_number" required>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="form-group">
+                                                        <label for="firstName">First Name</label>
+                                                        <input type="text" class="form-control" id="firstName" name="name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lastName">Last Name</label>
+                                                        <input type="text" class="form-control" id="lastName" name="last_name" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email">Email</label>
+                                                        <input type="email" class="form-control" id="email" name="email" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="phoneNumber">Phone Number</label>
+                                                        <input type="tel" class="form-control" id="phoneNumber" name="phone_number" required>
+                                                    </div>
+                                                {% endif %}
                                                 <!-- Add additional necessary information fields here -->
                                                 <input type="submit" class="btn btn-primary" vlaue="Create Profile">
                                             </form>
