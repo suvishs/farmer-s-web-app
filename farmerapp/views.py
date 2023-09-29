@@ -249,7 +249,6 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
             'description': daily_data['weather'][0]['description'],
             'icon': daily_data['weather'][0]['icon'],
         })
-    # print(daily_forecasts)
     return weather_data, daily_forecasts
 
 def neutrition_deficiency(request):
@@ -317,7 +316,7 @@ def neutrition_deficiency(request):
         predicted_deficiency = predict_deficiency(uploaded_image_path, clf, le)
         print(f"Predicted deficiency: {predicted_deficiency}")
         return render(request, "output.html", {"classification_report":classification_report(y_test, y_pred), "predicted_deficiency":predicted_deficiency, "cartproduct":cartproduct, "no_of_cartpro":no_of_cartpro})
-    return render(request, "input.html", {"predicted_deficiency":predicted_deficiency, "cartproduct":cartproduct, "no_of_cartpro":no_of_cartpro})
+    return render(request, "input.html", {"cartproduct":cartproduct, "no_of_cartpro":no_of_cartpro})
 
 def add_product(request):
     cartproduct = Cart.objects.filter(usr=request.user.id)
